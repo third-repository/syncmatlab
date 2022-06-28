@@ -7,7 +7,7 @@ on:
       - cron: '0 0/5 * * * ? *'
 
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Github To Gitee for org third-repository # 名字随便起
