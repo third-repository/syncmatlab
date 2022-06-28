@@ -4,8 +4,8 @@ on:
   pull_request:
     paths:
       - '.github/workflows/**'
-    # Runs at every pull requests submitted in master branch
-    branches: [ master, main ]
+      # Runs at every pull requests submitted in master branch
+      #  branches: [ master, main ]
   schedule:
     # Runs at 0,2,4,6...,22th hour every day (every 2 hours)
     - cron: '0 0/5 * * *'
