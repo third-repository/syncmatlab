@@ -1,12 +1,14 @@
 name: Github To Gitee
 on:
   push:
-    branches:
-      - master
+    schedule:
+      # * is a special character in YAML so you have to quote this string
+      # UTC 17:00 -> CST (China) 1:00, see https://datetime360.com/cn/utc-cst-china-time/
+      - cron: '0 0/5 * * * ? *'
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Github To Gitee  # 名字随便起
         uses: Yikun/hub-mirror-action@v1.2  # 使用Yikun/hub-mirror-action
