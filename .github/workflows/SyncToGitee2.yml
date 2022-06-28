@@ -1,0 +1,31 @@
+name: MindSpore Gitee repos mirror periodic job
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+    # Runs at every pull requests submitted in master branch
+    branches: [ master, main ]
+  schedule:
+    # Runs at 0,2,4,6...,22th hour every day (every 2 hours)
+    - cron: '0 */2 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mirror the gitee/mindspore org repos to github/mindspore-ai.
+        uses: Yikun/hub-mirror-action@v1.0
+        with:
+          src: github/third-repository   # 源端账户名(github)
+          dst: gitee/third-repository    # 目的端账户名(gitee)
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}  # SSH密钥对中的私钥
+          dst_token: ${{ secrets.GITEE_TOKEN }}  # Gitee账户的私人令牌
+          account_type: org
+          clone_style: ssh
+          #static_list: 'mindspore,mindinsight,mindarmour,graphengine,docs,book,community,ms-operator,akg,course,hub,serving,mindquantum,xai,models,mindscience,contrib,reinforcement'
+          force_update: true
+          #black_list: 'infrastructure'
+          debug: true
