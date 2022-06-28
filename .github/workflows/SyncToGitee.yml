@@ -1,4 +1,4 @@
-name: Github To Gitee
+name: Github To Gitee for org third-repository
 on:
   push:
     schedule:
@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Github To Gitee  # 名字随便起
-        uses: Yikun/hub-mirror-action@v1.2  # 使用Yikun/hub-mirror-action
+      - name: Github To Gitee for org third-repository # 名字随便起
+        uses: Yikun/hub-mirror-action@master  # 使用Yikun/hub-mirror-action
         with:
           src: github/third-repository   # 源端账户名(github)
           dst: gitee/third-repository    # 目的端账户名(gitee)
