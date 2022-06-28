@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github To Gitee for org third-repository # 名字随便起
-        uses: Yikun/hub-mirror-action@master  # 使用Yikun/hub-mirror-action
+        uses: w1013746133/hub-mirror-action@master  # 使用Yikun/hub-mirror-action
         with:
           src: github/third-repository   # 源端账户名(github)
           dst: gitee/third-repository    # 目的端账户名(gitee)
