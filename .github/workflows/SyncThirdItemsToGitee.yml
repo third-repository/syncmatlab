@@ -1,4 +1,4 @@
-name: MindSpore Gitee repos mirror periodic job
+name: Github To Gitee for org third-items
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     # UTC 20:00 -> CST (China) 4:00, see https://datetime360.com/cn/utc-cst-china-time/
-    #- cron: '0 20 * * *'
-    - cron: '0 0/5 * * *'
+    - cron: '0 20 * * *'
+    #- cron: '0 0/5 * * *'
       #pull_request:
       #branches: master
 
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mirror the gitee/mindspore org repos to github/mindspore-ai.
+      - name: Github To Gitee for org third-items
         uses: Yikun/hub-mirror-action@v1.0
         with:
           src: github/third-items   # 源端账户名(github)
