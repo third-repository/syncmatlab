@@ -1,4 +1,4 @@
-name: Github To Gitee for org third-repository
+name: Github To Gitee for org third-soundcode
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Github To Gitee for org third-repository # 名字随便起
+      - name: Github To Gitee for org third-soundcode # 名字随便起
         uses: Yikun/hub-mirror-action@v1.0  # 使用Yikun/hub-mirror-action
         with:
           src: github/third-soundcode    # 目的端账户名(gitee)
