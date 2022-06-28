@@ -1,14 +1,15 @@
 name: MindSpore Gitee repos mirror periodic job
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-      # Runs at every pull requests submitted in master branch
-      #  branches: [ master, main ]
+  push:
+  #branches: master
   schedule:
-    # Runs at 0,2,4,6...,22th hour every day (every 2 hours)
+    # * is a special character in YAML so you have to quote this string
+    # UTC 20:00 -> CST (China) 4:00, see https://datetime360.com/cn/utc-cst-china-time/
+    #- cron: '0 20 * * *'
     - cron: '0 0/5 * * *'
+      #pull_request:
+      #branches: master
 
 jobs:
   build:
